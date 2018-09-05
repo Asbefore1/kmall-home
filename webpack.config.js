@@ -51,6 +51,7 @@ module.exports={
 			util:path.resolve(__dirname,'./src/util'),
 			api:path.resolve(__dirname,'./src/api'),
 			common:path.resolve(__dirname,'./src/common'),
+			service:path.resolve(__dirname,'./src/service'),
 		}
 	},
 	//配置loader
@@ -108,11 +109,12 @@ module.exports={
   	devServer:{
   		contentBase:'./dist',
   		port:3002,
-  		historyApiFallback:true,
   		//代理跨域
   		proxy:{
   			'/user':{
+  				//目标接口
   				target:'http://127.0.0.1:3001',
+  				//是否跨域
   				changeOrigin:true
   			}
   		}

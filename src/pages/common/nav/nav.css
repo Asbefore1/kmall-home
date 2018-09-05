@@ -4,7 +4,8 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
 	padding: 0;
 }
 body{
-	background: #999;
+	background: #ccc;
+	font-size: 13px;
 }
 .container{
 	width:1080px;
@@ -33,10 +34,10 @@ body{
 .user-info{
 	float: left;
 }
-.user-list{
+.nav-list{
 	float: right;
 }
-.user-list .user-item{
+.nav-list .nav-item{
 	float:left;
 	list-style: none;
 	margin-right: 10px;
