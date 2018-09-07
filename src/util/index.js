@@ -21,13 +21,15 @@ var _util={
 					params.success && params.success(result.data);
 				//未登录
 				}else if(result.code==10){
-					_this.doLogin()
-				//请求失败
+					// _this.doLogin()
+				//请求失败(用户名或密码错误)
 				}else if(result.code==1){
-					params.error && params.error(result.message)
+					// console.log(result.errmessage)
+					params.error && params.error(result.errmessage)
 				}
 			},
 			//请求失败后调用的回调函数
+			//数据没法出去,没开后台等
 			error:function(err){
 				params.error && params.error(err.statusText)
 			}
@@ -38,6 +40,31 @@ var _util={
 	},
 	doLogin:function(){
 		window.location.href='./user-login.html';
+	},
+	goHome:function(){
+		window.location.href='/';
+	},
+	validata:function(value,type){
+		//验证用户名和密码不能为空
+		if(type === 'require'){
+			return value;
+		}
+		//验证用户名格式
+		if(type === 'username'){
+			return /^[a-z | A-Z | _ | 0-9 ]{3,10}$/.test(value);
+		}
+		//验证密码格式
+		if(type === 'password'){
+			return /^[a-z | A-Z | _ | 0-9 ]{3,10}$/.test(value);
+		}
+		//验证手机号格式
+		if(type === 'phone'){
+			return /^1[3568]\d{9}$/.test(value);
+		}
+		//验证邮箱格式
+		if(type === 'email'){
+			return /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/.test(value);
+		}
 	}
 }
 module.exports=_util;

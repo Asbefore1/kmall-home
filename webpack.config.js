@@ -18,6 +18,7 @@ const getHtmlConfig=(name)=>({
 	hash:true,
 
 	//只引入指定文件中进入index的js和html
+	//引入共通样式
 	chunks:['common',name]	
 })
 
@@ -30,9 +31,10 @@ module.exports={
 
 	//指定多个入口文件,名字是自己取的
 	entry:{
-		'common':'./src/pages/common/common.js',
+		'common':'./src/pages/common/index.js',
 		'index':'./src/pages/index/index.js',
-		'user-login':'./src/pages/user-login/login.js'
+		'user-login':'./src/pages/user-login/index.js',
+		'user-register':'./src/pages/user-register/index.js'
 	},
 	
 	//指定出口文件
@@ -99,6 +101,7 @@ module.exports={
   		//new了一个实例对象 		
     	new HtmlWebpackPlugin(getHtmlConfig('index')),
     	new HtmlWebpackPlugin(getHtmlConfig('user-login')),
+    	new HtmlWebpackPlugin(getHtmlConfig('user-register')),
     	//刪除多余的文件夹
     	new CleanWebpackPlugin(['dist']),
     	new MiniCssExtractPlugin({
