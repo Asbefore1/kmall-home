@@ -1,0 +1,29 @@
+.search{
+	background-color: #999;
+	height: 80px; 
+	padding:10px 0;
+	box-sizing: border-box;
+}
+.logo-text{
+	float: left;
+}
+.search-box{
+	float: left;
+	margin-top: 10px;
+}
+.search-input{
+	width: 400px;
+	height: 40px;
+	line-height: 40px;
+	margin-left: 100px;
+	outline: none;
+	padding-left: 10px;
+	font-size: 14px;
+	border:1px solid #f21;
+	float: left;
+}
+.serarch-btn{
+	height: 42px;
+	line-height: 42px;
+	float: left;
+}

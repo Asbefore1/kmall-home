@@ -16,6 +16,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
 }
 .user-info{
 	float: left;
+	padding:0 10px;
 }
 .nav-list{
 	float: right;

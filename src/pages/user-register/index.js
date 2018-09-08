@@ -49,6 +49,13 @@ var page={
 		$('#btn-submit').on('click',function(){
 			// console.log(this)//this是btn-submit这个DOM节点
 			_this.submit();
+		});
+		//键盘回车提交
+		$('input').on('keyup',function(e){
+			// console.log(e.keyCode)
+			if(e.keyCode==13){
+				_this.submit();
+			}
 		})
 	},
 	submit:function(){
@@ -70,7 +77,7 @@ var page={
 			formError.hide();
 			//发送注册请求
 			_user.register(formData,function(){
-				window.location.href='./result.html';				
+				window.location.href='./result.html?type=register';				
 			},function(msg){
 				formError.show(msg)
 			})

@@ -31,6 +31,13 @@ var page={
 		$('#btn-submit').on('click',function(){
 			// console.log(this)//this是btn-submit这个DOM节点
 			_this.submit();
+		});
+		//键盘回车提交
+		$('input').on('keyup',function(e){
+			// console.log(e.keyCode)
+			if(e.keyCode==13){
+				_this.submit();
+			}
 		})
 	},
 	submit:function(){

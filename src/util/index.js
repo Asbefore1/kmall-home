@@ -1,3 +1,4 @@
+var Hogan=require('hogan.js');//模板
 var _util={
 	request:function(params){
 		// console.log(params)//url函数  success函数  error函数
@@ -65,6 +66,20 @@ var _util={
 		if(type === 'email'){
 			return /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/.test(value);
 		}
+	},
+	getParamsFromUrl:function(key){
+		var query = window.location.search.substr(1);
+		// console.log(query)//type=register&aaa=bbb
+		var reg= new RegExp('(^|&)'+key+'=([^&]*)(&|$)');
+		var result=query.match(reg);
+		// console.log(result[2])//返回result[2]
+		return result ? decodeURIComponent(result[2]) : null;
+	},
+	//封装hogan函数
+	render:function(tmp,data){
+		var template = Hogan.compile(tmp);
+		var html = template.render(data);
+		return html;
 	}
 }
 module.exports=_util;

@@ -6,6 +6,13 @@ body{
 	background-color: #ccc;
 	font-size: 13px;
 }
+.clearfix:after{
+	clear: both;
+	content:'';
+	display: block;
+	height: 0px;
+	visibility: hidden;
+}
 .link{
 	color:#888;
 	text-decoration: none;
@@ -21,7 +28,8 @@ body{
 	width:1080px;
 	margin:0 auto;	
 }
-.btn{
+.btn,
+.serarch-btn{
 	display: inline-block;
 	width: 50px;
 	height: 30px;
@@ -36,7 +44,14 @@ body{
 .btn:hover{
 	opacity: 0.8;
 }
-
+/*logo共同样式*/
+.logo-text{
+	font-size: 30px;
+	text-decoration: none;
+	color:#f21;
+	font-weight: bold;
+	padding: 10px;
+}
 /*共通样式*/
 .form{
 	background: #ccc;
