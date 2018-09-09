@@ -37,6 +37,7 @@ module.exports={
 		'user-register':'./src/pages/user-register/index.js',
 		'result':'./src/pages/result/index.js',
 		'user-center':'./src/pages/user-center/index.js',
+		'user-update-password':'./src/pages/user-update-password/index.js',
 	},
 	
 	//指定出口文件
@@ -95,6 +96,12 @@ module.exports={
 		                presets: ['env','es2015','stage-3'],
 		            }
 		        }		                     
+        	},
+        	{
+		        test:/\.tpl$/,
+		        use: {
+		            loader: 'html-loader',
+		        }		                     
         	}
 	    ]
   	},
@@ -106,6 +113,7 @@ module.exports={
     	new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
     	new HtmlWebpackPlugin(getHtmlConfig('result','结果提示页')),
     	new HtmlWebpackPlugin(getHtmlConfig('user-center','用户中心')),
+    	new HtmlWebpackPlugin(getHtmlConfig('user-update-password','修改密码')),
     	//刪除多余的文件夹
     	new CleanWebpackPlugin(['dist']),
     	new MiniCssExtractPlugin({

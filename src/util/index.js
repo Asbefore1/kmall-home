@@ -15,14 +15,14 @@ var _util={
 			
 			//请求成功后调用的回调函数
 			success:function(result){
-				// console.log('result..',result)//code:0, errmessage:''
+				// console.log('result..',result)//code:0, errmessage/data
 				//请求成功
 				if(result.code==0){
 					//去调用success函数
 					params.success && params.success(result.data);
 				//未登录
 				}else if(result.code==10){
-					// _this.doLogin()
+					_this.doLogin()
 				//请求失败(用户名或密码错误)
 				}else if(result.code==1){
 					// console.log(result.errmessage)
@@ -40,7 +40,7 @@ var _util={
 		alert(message)
 	},
 	doLogin:function(){
-		window.location.href='./user-login.html';
+		window.location.href='./user-login.html?redirect='+encodeURIComponent(window.location.href);
 	},
 	goHome:function(){
 		window.location.href='/';
@@ -67,7 +67,7 @@ var _util={
 			return /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/.test(value);
 		}
 	},
-	getParamsFromUrl:function(key){
+	getParamsFromUrl:function(key){//key是键值
 		var query = window.location.search.substr(1);
 		// console.log(query)//type=register&aaa=bbb
 		var reg= new RegExp('(^|&)'+key+'=([^&]*)(&|$)');
@@ -76,9 +76,11 @@ var _util={
 		return result ? decodeURIComponent(result[2]) : null;
 	},
 	//封装hogan函数
-	render:function(tmp,data){
-		var template = Hogan.compile(tmp);
+	render:function(tpl,data){
+		// console.log(tpl,data)
+		var template = Hogan.compile(tpl);
 		var html = template.render(data);
+		// console.log(html)//形成三个li数据
 		return html;
 	}
 }

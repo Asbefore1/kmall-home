@@ -25,7 +25,18 @@ var side={
 		var html=_util.render(tmp,{data:123});
 		console.log(html)
 		*/
-		var html=_util.render(tmp,list[0])	
+		// console.log(this)//this是side这个对象
+		for(var i=0;i<this.list.length;i++){
+			//如果传进来的name等于list中的name,就加上一个active
+			if(this.list[i].name==name){
+				this.list[i].isActive=true;
+			}
+		}
+		//html是调用_util的render函数返回回来的数据
+		var html=_util.render(_tpl,{
+			list:this.list
+		});
+		$('.side').html(html)
 	}
 	
 }
