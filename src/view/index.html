@@ -7,6 +7,47 @@
 <body>
 	<%= require('html-loader!./common/nav.html')%>
 	<%= require('html-loader!./common/search.html')%>
+	<div class="focus">
+		<div class="container clearfix">
+			<ul class="keywords">
+			</ul>
+			<div class="carousel">
+			    <ul>
+			        <li>
+			        	<a href="./list.html?categoryId=111">
+			        		<img src="<%=require('../images/carousel/01.jpg')%>" alt="">
+			        	</a>
+			        </li>
+			        <li>
+			        	<a href="./list.html?categoryId=111">
+			        		<img src="<%=require('../images/carousel/02.jpg')%>" alt="">
+			        	</a>
+			        </li>
+			        <li>
+			        	<a href="./list.html?categoryId=111">
+			        		<img src="<%=require('../images/carousel/03.jpg')%>" alt="">
+			        	</a>
+			        </li>
+			        <li>
+			        	<a href="./list.html?categoryId=111">
+			        		<img src="<%=require('../images/carousel/04.jpg')%>" alt="">
+			        	</a>
+			        </li>
+			        <li>
+			        	<a href="./list.html?categoryId=111">
+			        		<img src="<%=require('../images/carousel/05.jpg')%>" alt="">
+			        	</a>
+			        </li>
+			    </ul>
+			    <span class="arrow prev">
+			    	<i class="fa fa-angle-left"></i>
+			    </span>
+			    <span class="arrow next">
+			    	<i class="fa fa-angle-right"></i>
+			    </span>
+			</div>
+		</div>
+	</div>
 	<%= require('html-loader!./common/footer.html')%>
 </body>
 </html>
