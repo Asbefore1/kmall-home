@@ -32,6 +32,7 @@
 	float: left;
 	width: 790px;
 	height: 440px;
+	margin-bottom: 40px;
 }
 .carousel ul li{
 	width: 790px;
@@ -58,4 +59,62 @@
 }
 .carousel .arrow.next{
 	right: 0;
+}
+/*楼层样式*/
+.floor-box{
+	margin-bottom: 20px;
+}
+.floor-title{
+	font-size: 18px;
+	color:#f21;
+	border-bottom:2px solid #f21;
+}
+.floor-box:nth-child(2) .floor-title{
+	color:#ff1;
+	border-bottom:2px solid #ff1;
+}
+.floor-box:nth-child(3) .floor-title{
+	color:#f0f;
+	border-bottom:2px solid #f0f;
+}
+.floor-box:nth-child(4) .floor-title{
+	color:#f18;
+	border-bottom:2px solid #f18;
+}
+.floor-box:nth-child(5) .floor-title{
+	color:blue;
+	border-bottom:2px solid blue;
+}
+
+.floor-list{/*ul*/
+	margin-top: 20px;
+}	
+.floor-item{/*li*/
+	float: left;
+	width: 208px;
+	height: 300px;
+	margin-right: 10px;
+	background-color: #fff;
+	text-align: center;
+}
+.floor-item:hover{
+	box-shadow: 0px 1px 7px rgba(0,0,0,0.5);
+}
+.floor-item:last-child{
+	margin-right: 0px;
+}
+.floor-item a{
+	text-decoration: none;	
+}
+.floor-item .floor-text{
+	font-size: 16px;
+	padding-top: 25px;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+	color:#000;
+	font-weight: bold;
+}
+.floor-item .floor-img{
+	width: 180px;
+	height: 200px;
 }

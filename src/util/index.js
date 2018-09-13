@@ -72,7 +72,7 @@ var _util={
 		// console.log(query)//type=register&aaa=bbb
 		var reg= new RegExp('(^|&)'+key+'=([^&]*)(&|$)');
 		var result=query.match(reg);
-		// console.log(result[2])//返回result[2]
+		// console.log(result)//返回result[2]
 		return result ? decodeURIComponent(result[2]) : null;
 	},
 	//封装hogan函数

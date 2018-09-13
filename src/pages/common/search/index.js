@@ -10,12 +10,14 @@ var page={
 		this.onload();
 		this.bindEvent();
 	},
+	//自动触发onload事件
 	onload:function(){
 		//关键字回填
 		//在地址栏里输入http://localhost:3002/?keyword=ssss搜索框里会自动出现ssss
 		//第一个keyword是调用getParamsFromUrl返回回来的数据
 		//第二个keyword是字符串名字
 		var keyword=_util.getParamsFromUrl('keyword');
+		// console.log('s::',keyword)
 		if(keyword){
 			$('#search-input').val(keyword)
 		}
@@ -43,7 +45,7 @@ var page={
 		// console.log(keyword)
 		if(keyword){
 			window.location.href='./list.html?keyword='+keyword;
-		}else{
+		}else{//关键词是空也就是没有关键词就跳转到首页
 			_util.goHome();
 		}
 	},

@@ -38,6 +38,7 @@ module.exports={
 		'result':'./src/pages/result/index.js',
 		'user-center':'./src/pages/user-center/index.js',
 		'user-update-password':'./src/pages/user-update-password/index.js',
+		'list':'./src/pages/list/index.js',
 	},
 	
 	//指定出口文件
@@ -110,6 +111,7 @@ module.exports={
   	plugins: [
   		//new了一个实例对象 		
     	new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
+    	new HtmlWebpackPlugin(getHtmlConfig('list','列表页')),
     	new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
     	new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
     	new HtmlWebpackPlugin(getHtmlConfig('result','结果提示页')),
@@ -127,7 +129,7 @@ module.exports={
   		port:3002,
   		//代理跨域
   		proxy:{
-  			'/user':{
+  			'/user':{//发送ajax请求时直接用/user就可以了,代表向3001端口发送请求
   				//目标接口
   				target:'http://127.0.0.1:3001',
   				//是否跨域
