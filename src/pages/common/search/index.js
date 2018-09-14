@@ -43,11 +43,7 @@ var page={
 		//处理搜索关键字
 		var keyword=$.trim($('#search-input').val());
 		// console.log(keyword)
-		if(keyword){
-			window.location.href='./list.html?keyword='+keyword;
-		}else{//关键词是空也就是没有关键词就跳转到首页
-			_util.goHome();
-		}
+		window.location.href='./list.html?keyword='+keyword;
 	},
 	
 }

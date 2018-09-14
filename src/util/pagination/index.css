@@ -1,0 +1,29 @@
+.pagination{
+	text-align: center;
+	margin-bottom: 20px;
+}
+.pagination-item{
+	display: inline-block;
+	width: 60px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 16px;
+	border: 1px solid #999;
+	cursor: pointer;
+	user-select: none;
+}
+.disabled{
+	background-color: #aaa;
+	color:#999;
+	cursor: auto;
+}
+.active{
+	background-color: #f21;
+	color:#fff;
+}
+.page-num{
+	display: inline-block;
+	margin-left: 10px;
+	font-size: 16px;
+}

@@ -1,4 +1,5 @@
 require('./index.css');
+//引入模块
 require('pages/common/logo')
 require('pages/common/footer');
 require('pages/common/nav');
@@ -11,6 +12,9 @@ var _util=require('util');
 var _product=require('service/product');
 var productTpl=require('./product.tpl');
 
+//引入pagination插件
+require('util/pagination');
+
 //登录页面逻辑
 var page={
 	listParams:{
@@ -20,9 +24,23 @@ var page={
 		orderBy:_util.getParamsFromUrl('orderBy') || 'default',
 	},
 	init:function(){
+		this.initPagination();
 		this.bindEvent();
 		//进到这个页面就先加载一次,然后每次点击之后又会加载
 		this.loadProductList();
+	},
+	initPagination:function(){
+		var _this=this;
+		var $pagination=$('.pagination-box');
+		//自动触发
+		$pagination.on('page-change',function(e,value){
+			// console.log('sss:::',value)
+			_this.listParams.page=value;
+			_this.loadProductList();
+		})
+		//第一次调用的时候没有数据,就new一个Pagination对象
+		//由于extend把pagination方法绑定在原型对象上,所以可以在外面调用
+		$pagination.pagination();
 	},
 	bindEvent:function(){
 		var _this=this;
@@ -54,6 +72,7 @@ var page={
 					_this.listParams.orderBy='price-sort-down';
 				}
 			};
+			_this.listParams.page=1;
 			_this.loadProductList()
 		});
 		
@@ -66,7 +85,7 @@ var page={
 		_product.getProductList(this.listParams,function(result){
 			// console.log(result)
 			var list=result.list.map(function(product){
-				console.log(product)//product是从list数组中拿出的5个对象
+				// console.log(product)//product是从list数组中拿出的5个对象
 				if(product.Image){
 					product.Image=product.Image.split(',')[0];
 				}else{
@@ -79,8 +98,15 @@ var page={
 				list:result.list
 			});
 			$('.product-list').html(html);
-		},function(){
 
+			//分页处理
+			$('.pagination-box').pagination('render',{
+				current:result.current,
+				total:result.total,
+				pageSize:result.pageSize
+			})
+		},function(msg){
+			_util.showErrorMsg(msg)
 		})
 	}
 }
