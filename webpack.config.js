@@ -39,6 +39,7 @@ module.exports={
 		'user-center':'./src/pages/user-center/index.js',
 		'user-update-password':'./src/pages/user-update-password/index.js',
 		'list':'./src/pages/list/index.js',
+		'detail':'./src/pages/detail/index.js',
 	},
 	
 	//指定出口文件
@@ -117,6 +118,7 @@ module.exports={
     	new HtmlWebpackPlugin(getHtmlConfig('result','结果提示页')),
     	new HtmlWebpackPlugin(getHtmlConfig('user-center','用户中心')),
     	new HtmlWebpackPlugin(getHtmlConfig('user-update-password','修改密码')),
+    	new HtmlWebpackPlugin(getHtmlConfig('detail','商品详情')),
     	//刪除多余的文件夹
     	new CleanWebpackPlugin(['dist']),
     	new MiniCssExtractPlugin({

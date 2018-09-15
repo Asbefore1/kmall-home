@@ -1,0 +1,130 @@
+.product-intro{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.product-img{/*左边,包括大图片和小图片*/
+	float: left;
+	width: 440px;
+	margin-right: 20px;
+}
+.product-main-img{/*大图片*/
+	width: 440px;
+	height: 440px;
+	margin-bottom: 10px;
+	border: 1px solid #999;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+.product-main-img img{
+	width: 100%;
+	height: 100%;
+}
+.product-small-img-item{/*小图片li*/
+	float: left;
+	width: 80px;
+	height: 80px;
+	margin-right: 10px;
+	border: 1px solid #999;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+.product-small-img-item.active{
+	border: 1px solid #f21;
+}
+.product-small-img-item:last-child{
+	margin-right: 0px;
+}
+.product-small-img-item img{
+	width: 100%;
+	height: 100%;
+}
+.product-info{/*右边的产品介绍*/
+	float: left;
+	width: 620px;
+	padding-left: 20px;
+	box-sizing: border-box;
+}
+.product-info .product-name{/*价格*/
+	font-size: 18px;
+	font-weight: bold;
+	height: 40px;
+	line-height: 40px;
+}
+.product-info .product-desc{
+	font-size: 16px;
+	height: 60px;
+	line-height: 30px;
+	color:#f21;
+}
+.product-info .product-info-item{/*包裹着价格数量库存的div*/
+	font-size: 16px;
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 20px;
+	padding-left: 10px;
+}
+.product-info .product-price{
+	background-color: #ddd;
+}
+.product-info .product-price .info{
+	color:#f21;
+}
+.product-info .product-count{
+	position: relative;
+}
+.product-info .product-count .count-input{
+	width: 40px;
+	text-align: center;
+	height: 25px;
+	line-height: 25px;
+	outline: none;
+}
+.product-info .product-count .count-btn{
+	position: absolute;
+	left: 100px;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	cursor: pointer;
+	user-select: none;
+	font-size: 16px;
+	font-weight:bolder;
+}
+.product-info .product-count .count-btn.plus{
+	top:0px;
+}
+.product-info .product-count .count-btn.minus{
+	bottom: 2px;
+}
+.product-info .add-cart{
+	padding-left: 10px;
+}
+.product-info .add-cart a{
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+}
+.product-detail .tab-list{/*ul*/
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #f21;
+	background-color: #ddd;
+}
+.product-detail .tab-item{/*li*/
+	width: 80px;
+	padding: 0 10px;
+	float: left;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.product-detail .tab-item.active{
+	background-color: #f21;
+	color: #fff;
+}
+.product-detail .tab-content{
+	padding: 10px;
+	border: 1px solid #666;
+	min-height: 200px;
+}
