@@ -136,6 +136,18 @@ module.exports={
   				target:'http://127.0.0.1:3001',
   				//是否跨域
   				changeOrigin:true
+  			},
+  			'/product':{//发送ajax请求时直接用/product就可以了,代表向3001端口发送请求
+  				//目标接口
+  				target:'http://127.0.0.1:3001',
+  				//是否跨域
+  				changeOrigin:true
+  			},
+  			'/cart':{//发送ajax请求时直接用/cart就可以了,代表向3001端口发送请求
+  				//目标接口
+  				target:'http://127.0.0.1:3001',
+  				//是否跨域
+  				changeOrigin:true
   			}
   		}
   	}

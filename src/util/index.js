@@ -4,7 +4,7 @@ var _util={
 		// console.log(params)//url函数  success函数  error函数
 		// console.log('util',this);//this是util这个对象
 		var _this=this;
-		$.ajax({
+		$.ajax({	
 			url:params.url || '',
 			method:params.method || 'get',
 			//返回的数据类型

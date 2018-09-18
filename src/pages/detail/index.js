@@ -9,6 +9,7 @@ require('pages/common/search');
 var _util=require('util');
 //向后台发送数据
 var _product=require('service/product');
+var _cart=require('service/cart');
 var detailTpl=require('./detail.tpl');
 
 //登录页面逻辑
@@ -51,7 +52,19 @@ var page={
 			}else{
 				$Input.val(current > min ? current-1 : min )
 			}
-		})	
+		});
+		//添加购物车
+		$('.detail-box').on('click','.btn',function(){
+			_cart.addCart({
+				productId:_this.params.productId,
+				count:$('.count-input').val()
+			},function(){
+				// console.log(data)
+				//window.location.href='./result.html?type=addCart';
+			},function(msg){
+				_util.showErrorMsg(msg)
+			})
+		})
 	},
 	loadProductDetail:function(){
 		var _this=this;
